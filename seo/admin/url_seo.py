@@ -13,7 +13,6 @@ __all__ = (
 
 @admin.register(UrlSeo)
 class UrlSeoAdmin(
-    AdminRichTextFieldMixin,
     get_admin_base_class()
 ):
     """

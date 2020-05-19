@@ -13,7 +13,6 @@ __all__ = (
 
 @admin.register(ViewSeo)
 class ViewSeoAdmin(
-    AdminRichTextFieldMixin,
     get_admin_base_class()
 ):
     """

@@ -15,7 +15,7 @@ __all__ = (
 
 
 @admin.register(ModelInstanceSeo)
-class ModelInstanceSeoAdmin(AdminRichTextFieldMixin, get_admin_base_class()):
+class ModelInstanceSeoAdmin(get_admin_base_class()):
     """
     Model instance seo admin interface
     """
