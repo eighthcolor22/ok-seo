@@ -10,6 +10,7 @@ __all__ = (
 
 
 class ModelInstanceSeoInline(
+    AdminRichTextFieldMixin,
     get_admin_inline_base_class()
 ):
     classes = ['collapse']
