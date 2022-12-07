@@ -60,8 +60,6 @@ Available settings
 
 ``SEO_USE_URL_SEO`` - Flag to use (display in an admin interface) only `UrlSeo` model. `False` by default.
 
-``SEO_USE_URL_FULL_PATH`` - Flag to use a whole path, plus an appended query string, to search `UrlSeo` isntances. `False` by default.
-
 ``SEO_VIEWS_CHOICES`` - Tuple of tuples for using with `ViewSeo`. The first value is the value to use in a code and a second is a verbose (translated) value.
 
 For example:
@@ -69,8 +67,8 @@ For example:
 .. code:: python
 
     SEO_VIEWS_CHOICES = (
-        ('index', 'Index'),
-        ('faq', 'Faq'),
+        ('index', 'Index page'),
+        ('faq', 'FAQ page'),
     )
 
 
@@ -134,14 +132,6 @@ By default:
 
 ``SEO_HTML_ADMIN_WIDGET`` - Dictionary with default widget for `top_text` and `bottom_text` text fields in django admin interface.
 
-``SEO_DEBUG_MODE`` - Sets debug mode. If ``True`` adds `<meta name="robots" content="noindex,nofollow">` to all pages.
-
-``SEO_URL_SEO_SITEMAP_PRIORITY`` - `UrlSeo` sitemap priority. `1` by default.
-
-``SEO_URL_SEO_SITEMAP_CHANGEFREQ`` - `UrlSeo` sitemap changefreq. `always` by default.
-
-``SEO_VIEWS_CONTEXT_NAME`` - name of context variable for mixins for class based views. `seo` by default.
-
 For example:
 
 .. code:: python
@@ -150,6 +140,14 @@ For example:
         'widget': 'TinyMCE',
         'widget_path': 'tinymce.widgets'
     }
+
+``SEO_DEBUG_MODE`` - Sets debug mode. If ``True`` adds `<meta name="robots" content="noindex,nofollow">` to all pages.
+
+``SEO_URL_SEO_SITEMAP_PRIORITY`` - `UrlSeo` sitemap priority. `1` by default.
+
+``SEO_URL_SEO_SITEMAP_CHANGEFREQ`` - `UrlSeo` sitemap changefreq. `always` by default.
+
+``SEO_VIEWS_CONTEXT_NAME`` - name of context variable for mixins for class based views. `seo` by default.
 
 
 Basic example to use:
