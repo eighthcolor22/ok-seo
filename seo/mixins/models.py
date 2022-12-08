@@ -2,7 +2,8 @@ import mimetypes
 from typing import Dict
 
 from django.contrib.sites.shortcuts import get_current_site
-from django.db.models import Model, CharField, ImageField
+from django.db.models import Model
+from django.db.models.fields.files import ImageFieldFile
 from django.utils.translation import to_locale, get_language
 
 from ..const import DEFAULT_OBJECT_TYPES, DEFAULT_TWITTER_TYPES
@@ -98,16 +99,12 @@ class SeoTagsMixin:
         Return url of image
         """
         image_field = self.get_meta_image_field(obj)
-
-        model = obj.__class__ if obj else self.__class__
-        image_field_dsc = model._meta.get_field(self.SEO_IMAGE_FIELD)
-
-        if image_field and isinstance(image_field_dsc, ImageField):
+        if image_field and isinstance(image_field, ImageFieldFile):
             try:
                 return image_field.url
             except Exception:
                 return SEO_DEFAULT_IMAGE
-        elif image_field and isinstance(image_field_dsc, CharField):
+        elif image_field and isinstance(image_field, str):
             return image_field
 
         return SEO_DEFAULT_IMAGE
