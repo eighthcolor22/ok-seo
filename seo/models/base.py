@@ -107,6 +107,10 @@ class BaseSeoModel(models.Model):
         storage=image_storage(),
         validators=[FileExtensionValidator(SEO_IMAGE_EXTENSIONS)]
     )
+    image_src = models.CharField(
+        pgettext_lazy('ok:seo', 'Image src'),
+        max_length=100, blank=True, null=True
+    )
     width = models.PositiveIntegerField(
         pgettext_lazy('ok:seo', 'Image width'),
         default=SEO_IMAGE_WIDTH

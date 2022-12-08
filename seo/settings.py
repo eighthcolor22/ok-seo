@@ -11,6 +11,7 @@ __all__ = (
     'SEO_IMAGE_HEIGHT',
     'SEO_OBJECT_IMAGE_FIELD',
     'SEO_IMAGE_EXTENSIONS',
+    'SEO_SHOW_IMAGE_FILE_FIELD',
 
     'SEO_MODELS',
 
@@ -43,6 +44,7 @@ SEO_DEFAULT_IMAGE = getattr(django_settings, 'SEO_DEFAULT_IMAGE', '')
 SEO_IMAGE_WIDTH = getattr(django_settings, 'SEO_IMAGE_WIDTH', 1200)
 SEO_IMAGE_HEIGHT = getattr(django_settings, 'SEO_IMAGE_HEIGHT', 630)
 SEO_OBJECT_IMAGE_FIELD = getattr(django_settings, 'SEO_OBJECT_IMAGE_FIELD', 'image')
+SEO_SHOW_IMAGE_FILE_FIELD = getattr(django_settings, 'SEO_SHOW_IMAGE_FIELD', False)
 
 # allowed image extensions for seo image
 SEO_IMAGE_EXTENSIONS = getattr(
