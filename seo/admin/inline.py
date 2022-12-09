@@ -1,5 +1,6 @@
 from django.utils.translation import pgettext_lazy
 
+from .base_fields import base_seo_fields
 from .mixins import AdminRichTextFieldMixin
 from .utils import get_admin_inline_base_class
 from ..models.instance_based import ModelInstanceSeo
@@ -23,3 +24,4 @@ class ModelInstanceSeoInline(
     verbose_name_plural = pgettext_lazy(
         "ok:seo", "Seo"
     )
+    fields = base_seo_fields
