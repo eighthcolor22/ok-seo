@@ -37,7 +37,7 @@ class ViewSeo(SeoTagsMixin, BaseSeoModel):
         """
         Return image field instance to get image url
         """
-        field = self.image
+        field = getattr(self, self.SEO_IMAGE_FIELD, None)
         if not field and obj:
             field = getattr(obj, self.SEO_IMAGE_FIELD, None)
         return field
